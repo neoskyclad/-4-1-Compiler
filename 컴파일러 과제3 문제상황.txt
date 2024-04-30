@@ -1,0 +1,24 @@
+0. lex와 yacc 명령어를 cygwin에서 사용하기 위해 bison과 flex 패키지를 설치하였다.
+1. 처음 돌렸을 때 , { } 문양을 써서 오류가 났었다. 각각 COMMA LR RR 처럼 토큰 명으로 바꿔줬다.
+2. pdf를 통해 문법을 작성할 때 : 문양의 혼용이 있었다. yacc 문법의 :과 COLON을 잘 구별해서 고쳤다.
+3. type_identifier 사용에 대해 기존 pdf 문법 바꿔줌
+4. 2개의 SR conflicts와 12개의 RR conflicts 발생
+- SR 하나는 if - else에 대한 내용이라서 넘어감
+- 나머지 SR은 unary_expression = assignment_expression (SHIFT)와 unary_expression -> constant_expression -> = initializer (REDUCE)이다.
+-> 걍 무시함
+5. 03.l lex 안됨 = 정규식에 오류가 있음
+주석 처리하는 정규식에 오류가 있어서 다음과 같이 수정함 \/\*([^*]|\*+[^*/])*\*\/ { }
+
+====================================
+shift/reduce -> 1개로 줄이기  -Wconflicts-sr
+- (unary) = (assignment)
+ - ++d = 
+(현재 상태에서 shift 규칙과 reduce 규칙이 혼동됨)
+
+reduce/reduce -> 전부 해결  -Wconflicts-rr
+- IDENTIFIER: 선언할 때 변수랑 사용할 때 변수 겹침
+(현재 상태에서 두 개 이상의 reduce 규칙이 적용될 수 있음)
+
+====================================
+main.c 테스트
+1. 
