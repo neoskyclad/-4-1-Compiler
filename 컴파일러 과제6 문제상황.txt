@@ -1,0 +1,23 @@
+<컴파일러 과제6 문제상황>
+과제5 피드백
+테스트 프로그램의 종류를 더 다양하게 해봐야하겠습니다. 
+여러가지 실험결과에 대한 평가나 문제점들을 기술해야 하겠습니다.
+
+과제6 테스트할 것
+"arithmetic type expression required in unary operation"
+18: "illegal constant expression "
+19: "illegal identifier %s in constant expression";
+21: "illegal type in function call expression"
+24: "incompatible type in additive expression"
+27: "scalar type expression required in unary or logial-or operation"
+28: "arithmetic type expression required in binary operation"
+29: "integral type expression required in array subscript or binary operation"
+31: “pointer type expression required in pointer operation"
+32: "array type required in array expression"
+34: "too many arguments in function call"
+35: "too few arguments in function call"
+37: "illegal struct field identifier in struct reference expression"
+90: "fatal compiler error in parse result"
+93: "too many literals in source program"
+
++) 실제 gcc 결과랑 비교
