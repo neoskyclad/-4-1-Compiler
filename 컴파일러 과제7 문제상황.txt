@@ -1,0 +1,26 @@
+컴파일러 과제7 문제상황
+기존 컴파일러에 gen.c 만들기
+yacc -d parse.y
+flex scan.l
+cc -o mycc y.tab.c lex.yy.c syntax.c semantic.c gen.c main.c
+
+Assembler & Interpreter 만들기
+yacc -d interp.y
+flex interp.l
+cc -o interp y.tab.c lex.yy.c interp.c lib.c
+
+컴파일러를 돌리면 a.asm 파일이 만들어짐
+해당 a.asm을 ./interp.exe a.asm으로 확인
+
+1. fout undeclared
+- 헤더파일 추가해서 해결
+
+2. syntax_err 및 semantic_err undeclared
+
+gen.c 구현
+3. gen_literal_table() 구현
+- 
+
+테스트 코드 작성
+1. 올바른 코드
+2. 잘못된 코드
